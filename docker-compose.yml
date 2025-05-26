@@ -38,6 +38,7 @@ services:
       - IBM_ENDPOINT=${IBM_ENDPOINT:-https://us-south.ml.cloud.ibm.com}
       - IBM_API_KEY=${IBM_API_KEY:-}
       - IBM_PROJECT_ID=${IBM_PROJECT_ID:-}
+      - DEFAULT_LLM=${DEFAULT_LLM:-openai}
 
       # Application Settings
       - ANONYMIZED_TELEMETRY=${ANONYMIZED_TELEMETRY:-false}
@@ -49,7 +50,7 @@ services:
       - BROWSER_DEBUGGING_PORT=${BROWSER_DEBUGGING_PORT:-9222}
       - BROWSER_DEBUGGING_HOST=localhost
       - USE_OWN_BROWSER=false
-      - KEEP_BROWSER_OPEN=true
+      - KEEP_BROWSER_OPEN=${KEEP_BROWSER_OPEN:-false}
       - BROWSER_CDP=${BROWSER_CDP:-} # e.g., http://localhost:9222
 
       # Display Settings
@@ -63,6 +64,12 @@ services:
 
       # VNC Settings
       - VNC_PASSWORD=${VNC_PASSWORD:-youvncpassword}
+
+      # WebUI Settings
+      - WEBUI_USERNAME=${WEBUI_USERNAME:-admin}
+      - WEBUI_PASSWORD=${WEBUI_PASSWORD:-admin}
+      - WEBUI_HOST=${WEBUI_HOST:-0.0.0.0}
+      - WEBUI_PORT=${WEBUI_PORT:-7788}
 
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
