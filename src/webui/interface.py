@@ -69,11 +69,11 @@ def create_ui(theme_name="Ocean"):
             )
 
         with gr.Tabs() as tabs:
-            # with gr.TabItem("⚙️ Agent Settings"):
-            #     create_agent_settings_tab(ui_manager)
+            with gr.TabItem("⚙️ Agent Settings", visible=False):  # Hidden tab
+                create_agent_settings_tab(ui_manager)
 
-            # with gr.TabItem("🌐 Browser Settings"):
-            #     create_browser_settings_tab(ui_manager)
+            with gr.TabItem("🌐 Browser Settings", visible=False):  # Hidden tab
+                create_browser_settings_tab(ui_manager)
 
             with gr.TabItem("🤖 Run Agent"):
                 gr.Markdown(
