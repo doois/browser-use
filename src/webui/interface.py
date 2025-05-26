@@ -22,8 +22,8 @@ theme_map = {
 def create_ui(theme_name="Ocean"):
     css = """
     .gradio-container {
-        width: 70vw !important; 
-        max-width: 70% !important; 
+        width: 70vw !important;
+        max-width: 70% !important;
         margin-left: auto !important;
         margin-right: auto !important;
         padding-top: 10px !important;
@@ -69,13 +69,19 @@ def create_ui(theme_name="Ocean"):
             )
 
         with gr.Tabs() as tabs:
-            with gr.TabItem("⚙️ Agent Settings"):
-                create_agent_settings_tab(ui_manager)
+            # with gr.TabItem("⚙️ Agent Settings"):
+            #     create_agent_settings_tab(ui_manager)
 
-            with gr.TabItem("🌐 Browser Settings"):
-                create_browser_settings_tab(ui_manager)
+            # with gr.TabItem("🌐 Browser Settings"):
+            #     create_browser_settings_tab(ui_manager)
 
             with gr.TabItem("🤖 Run Agent"):
+                gr.Markdown(
+                    """
+                    **To view the agent running, access [https://browser.doois.com.br](https://browser.doois.com.br) and use the same password to login**
+                    """,
+                    elem_classes=["info-text"],
+                )
                 create_browser_use_agent_tab(ui_manager)
 
             with gr.TabItem("🎁 Agent Marketplace"):
