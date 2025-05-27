@@ -91,7 +91,7 @@ def test_llm(config, query, image_path=None, system_message=None):
     print(ai_msg.content)
 
 def test_openai_model():
-    config = LLMConfig(provider="openai", model_name="gpt-4o")
+    config = LLMConfig(provider="openai", model_name="gpt-4o-mini")
     test_llm(config, "Describe this image", "assets/examples/test.png")
 
 

@@ -31,7 +31,7 @@ async def test_browser_use_agent():
 
     llm = llm_provider.get_llm_model(
         provider="openai",
-        model_name="gpt-4o",
+        model_name="gpt-4o-mini",
         temperature=0.8,
     )
 
@@ -332,7 +332,7 @@ async def test_deep_research_agent():
 
     llm = llm_provider.get_llm_model(
         provider="openai",
-        model_name="gpt-4o",
+        model_name="gpt-4o-mini",
         temperature=0.5
     )
 
